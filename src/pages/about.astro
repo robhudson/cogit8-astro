@@ -1,0 +1,69 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
+import { INTRO } from "@config";
+---
+
+<Layout>
+  <Header />
+  <main id="main-content">
+    <section id="hero">
+      <h1>
+        Hi! 👋
+      </h1>
+      <p>
+        { INTRO }
+      </p>
+
+      <p>
+      What you'll find here:
+      <dl>
+        <dt>Deep dives into backend web development</dt>
+        <dd>
+          Dive into detailed breakdowns of specific topics, exploring the intricacies of Python,
+          Django, and other relevant frameworks. Expect to find code examples, explanations of
+          complex concepts, and practical tips & tricks.
+        </dd>
+        <dt>Lessons learned, the hard way</dt>
+        <dd>
+          No journey is smooth sailing, and software
+          development is no exception. I'll share my experiences, both successes and challenges,
+          offering insights and learnings that others can (hopefully) benefit from.
+        </dd>
+        <dt>Personal projects and experiments</dt>
+        <dd>
+          Get a glimpse into my personal projects, experiments, and side hustles. See how I apply my
+          knowledge in real-world scenarios and learn from my approaches.
+        </dd>
+        <dt>Thoughts and musings on the industry</dt>
+        <dd>
+          From emerging trends to the future of backend development, I'll share my thoughts and
+          opinions on the industry, sparking discussion and offering different perspectives.
+        </dd>
+      </dl>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  /* ===== Hero Section ===== */
+  #hero {
+    @apply pb-6 pt-8;
+  }
+  #hero h1 {
+    @apply my-4 inline-block text-3xl font-bold sm:my-8 sm:text-5xl;
+  }
+  #hero p {
+    @apply my-8 text-justify;
+  }
+  #hero dt {
+    @apply font-bold;
+  }
+  #hero dd {
+    @apply m-4;
+  }
+
+</style>
