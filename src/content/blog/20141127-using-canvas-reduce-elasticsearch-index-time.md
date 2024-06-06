@@ -2,7 +2,7 @@
 title:  "Using Celery's Canvas to Reduce Elasticsearch Index Time"
 author: Rob Hudson
 pubDatetime: 2014-11-27T12:00:00-08:00
-slug: using-canvas-reduce-elasticsearch-index-time
+slug: 2014-11-27-using-canvas-reduce-elasticsearch-index-time
 tags:
   - elasticsearch
   - python
