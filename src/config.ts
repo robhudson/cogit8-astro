@@ -5,6 +5,7 @@ export const SITE: Site = {
   author: "Rob Hudson",
   desc: "Cogitate on code alongside Rob Hudson, a software engineer sharing experiences, learnings, and insights on Python, Django, and web development.",
   title: "Rob's Cogitations",
+  profile: "https://rob.cogit8.org/",
   ogImage: "astropaper-og.jpg",
   lightAndDarkMode: true,
   postPerPage: 20,
@@ -44,7 +45,7 @@ export const SOCIALS: SocialObjects = [
   },
   {
     name: "Mastodon",
-    href: "https://mastodon.social/@robhudson",
+    href: "https://fosstodon.org/@robhudson",
     linkTitle: "Mastodon",
     active: true,
   },
