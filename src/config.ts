@@ -9,7 +9,13 @@ export const SITE: Site = {
   ogImage: "astropaper-og.jpg",
   lightAndDarkMode: true,
   postPerPage: 20,
+  postPerIndex: 4,
   scheduledPostMargin: 15 * 60 * 1000, // 15 minutes
+  editPost: {
+    url: "https://github.com/robhudson/cogit8-astro/edit/main/src/content/blog",
+    text: "Suggest Changes",
+    appendFilePath: true,
+  },
 };
 
 export const INTRO = (
