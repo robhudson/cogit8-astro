@@ -8,9 +8,10 @@ export const SITE: Site = {
   profile: "https://rob.cogit8.org/",
   ogImage: "astropaper-og.jpg",
   lightAndDarkMode: true,
-  postPerPage: 20,
   postPerIndex: 4,
+  postPerPage: 20,
   scheduledPostMargin: 15 * 60 * 1000, // 15 minutes
+  showArchives: false,
   editPost: {
     url: "https://github.com/robhudson/cogit8-astro/edit/main/src/content/blog",
     text: "Suggest Changes",
