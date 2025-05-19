@@ -17,4 +17,6 @@ export const SITE = {
     url: "",
   },
   dynamicOgImage: true,
+  lang: "en",
+  timezone: "America/Los_Angeles",
 } as const;
