@@ -5,6 +5,7 @@ pubDatetime: 2024-09-19T12:00:00-08:00
 slug: 2024-09-19-pyenv-to-uv
 tags:
   - python
+  - uv
 description:
   A quick guide on transitioning from pyenv to Astral's uv, highlighting its speed, unified
   workflow, and tips for setting up Python environments efficiently.
