@@ -124,11 +124,8 @@ ARG BUILD_GROUPS=""
 RUN --mount=type=cache,target=/app/.cache/uv \
     --mount=type=bind,source=uv.lock,target=uv.lock \
     --mount=type=bind,source=pyproject.toml,target=pyproject.toml \
-    sh -euc '\
-        uv venv $VIRTUAL_ENV && \
-        GROUPS=$(echo "$BUILD_GROUPS" | xargs -n1 printf -- "--group %s ") && \
-        uv sync --no-install-project --no-editable $GROUPS \
-    '
+    uv venv $VIRTUAL_ENV && \
+    uv sync --no-install-project --no-editable $BUILD_GROUPS
 ```
 
 This approach gives you fine-grained control over what gets installed in different environments. Developers can still get all dependencies by providing the `BUILD_GROUPS` argument to Docker:
@@ -138,20 +135,20 @@ This approach gives you fine-grained control over what gets installed in differe
 docker build .
 
 # Development: include dev tools.
-docker build --build-arg BUILD_GROUPS="dev" .
+docker build --build-arg BUILD_GROUPS="--group dev" .
 
 # CI: include testing dependencies.
-docker build --build-arg BUILD_GROUPS="test" .
+docker build --build-arg BUILD_GROUPS="--group test" .
 ```
 
 With Docker Compose the build arguments can be specified:
 
 ```yaml
 args:
-  BUILD_GROUPS: "dev test"
+  BUILD_GROUPS: "--group dev --group test"
 ```
 
-The shell script from the Dockerfile transforms the space-separated group names into the appropriate `--group` flags that `uv` expects. This keeps your production images lean and secure by default while giving developers and CI systems fast, tailored installs.
+This keeps your production images lean and secure by default while giving developers and CI systems fast, tailored installs.
 
 ## Migration from pip
 
@@ -242,11 +239,8 @@ ARG BUILD_GROUPS=""
 RUN --mount=type=cache,target=/app/.cache/uv \
     --mount=type=bind,source=uv.lock,target=uv.lock \
     --mount=type=bind,source=pyproject.toml,target=pyproject.toml \
-    sh -euc '\
-        uv venv $VIRTUAL_ENV && \
-        GROUPS=$(echo "$BUILD_GROUPS" | xargs -n1 printf -- "--group %s ") && \
-        uv sync --no-install-project --no-editable $GROUPS \
-    '
+    uv venv $VIRTUAL_ENV && \
+    uv sync --no-install-project --no-editable $BUILD_GROUPS
 
 # Copy what's needed to run collectstatic.
 COPY myproj /app/myproj
